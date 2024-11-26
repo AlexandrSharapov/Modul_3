@@ -10,9 +10,9 @@ def get_multiplied_digits(number): #целое число
         first = int(str_number[0]) #первый символ из str_number в числовом представлении(int) на основании индекса
         return first * get_multiplied_digits(int(str_number[1:])) #умножаем первую цифру числа на результат работы этой же функции с числом, но уже без первой цифры.
 
-    # иначе длина str_number не больше 1, тогда вернуть оставшуюся цифру first
+     #Если str_number состоит из одной цифры, возвращается эта цифра
     else:
-        return int(str_number)
+        return int(str_number) if int(str_number) != 0 else 1 #если наше число не = 0, возвращается 1 (уход от умножения на ноль)
 
 #Вывод на консоль:
 result = get_multiplied_digits(40203)

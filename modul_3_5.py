@@ -12,8 +12,15 @@ def get_multiplied_digits(number): #целое число
 
      #Если str_number состоит из одной цифры, возвращается эта цифра
     else:
-        return int(str_number) if int(str_number) != 0 else 1 #если наше число не = 0, возвращается 1 (уход от умножения на ноль)
+        #(уход от умножения на ноль) если наше число не = 0, возвращается 1 
+        if int(str_number) != 0:
+            return int(str_number)
+        else:
+            return 1
 
 #Вывод на консоль:
 result = get_multiplied_digits(40203)
 print(result)
+
+result2 = get_multiplied_digits(402030)
+print(result2)
